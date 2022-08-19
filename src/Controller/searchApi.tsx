@@ -1,5 +1,5 @@
 import axios from "axios";
-import {repetaData} from "./Data/data";
+import {cardsArray, repetaData} from "./Data/data";
 
 const  datos = {
     "widget": {
@@ -32,9 +32,23 @@ const  datos = {
 
 const searchCard = async() =>{
 
-   const data = repetaData(datos)
+    const data = []
+try{
+    
+   const response = await axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php")
 
-  return data
+   data.push(response.data)
+
+
+   
+    return response.data
+
+  } catch (error) {
+
+    console.log(error);
+    
+    
+  }
    
 
 }

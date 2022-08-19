@@ -1,15 +1,16 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { cardsArray } from '../../Controller/Data/data';
+import { CardsApi } from '../../Controller/Data/structApi';
 
-function CardsWeb(props:cardsArray) {
+function CardsWeb(props:CardsApi) {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
-        <Card.Title>{props.widget.text.name}</Card.Title>
+        <Card.Title>{props.data.name}</Card.Title>
         <Card.Text>
-        {props.widget.text.alignment}
+        {props.data.desc}
         </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>

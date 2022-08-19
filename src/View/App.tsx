@@ -4,10 +4,11 @@ import { cardsArray } from "../Controller/Data/data"
 import searchCard from "../Controller/searchApi"
 import {Container,Col,Row} from "react-bootstrap"
 import CardsWeb from "./subPages/cards"
+import { CardsApi } from "../Controller/Data/structApi"
 
 const App = ():JSX.Element =>{
 
-    const [cards,setCards]=  useState<cardsArray[]>()
+    const [cards,setCards]=  useState<CardsApi[]>()
 
 const loadData = async()=>{
   
@@ -16,6 +17,7 @@ const loadData = async()=>{
 
     setCards(datos)
     
+console.log(datos);
 
     
  
