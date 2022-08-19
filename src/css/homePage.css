@@ -1,0 +1,19 @@
+
+
+
+
+
+a, a:hover, a:focus, a:active{
+    text-decoration: none;
+    color:inherit;
+    
+    
+}
+
+.redes a{
+    padding: 3%;
+}
+
+.redes a:hover{
+    color:rgb(241, 215, 63)
+}
