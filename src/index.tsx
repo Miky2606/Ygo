@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PageNotFound from './View/PageNotFound';
 import NavBarWeb from './View/navBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './View/Footer';
+
 import "./css/homePage.css"
 
 const root = ReactDOM.createRoot(

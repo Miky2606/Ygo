@@ -11,17 +11,17 @@ function NavBarWeb(): JSX.Element {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Cards</Nav.Link>
-            <Nav.Link href="#link">Products</Nav.Link>
-            <Nav.Link href="#l">Staples</Nav.Link>
+            <Nav.Link href="/home">Cards</Nav.Link>
+            <Nav.Link href="/link">Products</Nav.Link>
+            <Nav.Link href="/l">Staples</Nav.Link>
         
           </Nav>
         </Navbar.Collapse>
        <div className="redes" 
         >
-       <a href="">Instagram</a>
-        <a href="">Instagram</a>
-        <a href="">Instagram</a>
+       <a href="/hh">Instagram</a>
+        <a href="/ss">Instagram</a>
+        <a href="/sss">Instagram</a>
        </div>
         
       </Container>

@@ -1,71 +1,63 @@
+import { useEffect, useState } from "react";
+import searchCard from "../Controller/searchApi";
+import { Container, Col, Row, Spinner, Alert } from "react-bootstrap";
+import CardsWeb from "./subPages/cards";
+import { CardsApi } from "../Controller/Data/structApi";
+import axios from "axios";
+import { setDefaultResultOrder } from "dns/promises";
 
-import { useEffect, useState } from "react"
-import { cardsArray } from "../Controller/Data/data"
-import searchCard from "../Controller/searchApi"
-import {Container,Col,Row} from "react-bootstrap"
-import CardsWeb from "./subPages/cards"
-import { CardsApi } from "../Controller/Data/structApi"
+const App = (): JSX.Element => {
+  const [cards, setCards] = useState<CardsApi[]>();
+  const [loading, setLoading] = useState<Boolean>(true);
+  const [error, setError] = useState<String>("");
 
-const App = ():JSX.Element =>{
+  useEffect(() => {
+    axios
+      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php")
+      .then((response) => {
+        setCards(response.data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
 
-    const [cards,setCards]=  useState<CardsApi[]>()
+  return (
+    <div id="content">
+      <Container>
+        <Row>
+          {loading ? (
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          ) : (
+            <span></span>
+          )}
 
-const loadData = async()=>{
-  
-    const datos = await searchCard()
- 
+          {error !== "" ? (
+            <Alert variant="danger">Error: {error}</Alert>
+          ) : (
+            <span></span>
+          )}
 
-    setCards(datos)
-    
-console.log(datos);
+          {cards !== [] ? (
+            cards?.map((e) => {
+              return (
+                <Col xs={4}>
+                  {" "}
+                  <CardsWeb {...e}  />
+                </Col>
+              );
+            })
+          ) : (
+            <div>Vacio</div>
+          )}
+        </Row>
+      </Container>
+    </div>
+  );
+};
 
-    
- 
-}
-
-
-    useEffect(()=>{
-        loadData()
- 
-    },[])
-
-    return (
-      
-        <div id="content">
-         <Container>
-         <Row>
-       
-        {cards !== [] ? 
-         
-       cards?.map((e)=>{
-
-       
-
-        return (
-         
-         
-              <Col xs={4}> <CardsWeb {...e} /></Col>
-           
-           
-          
-
-
-               
-        )
-
-       })
-
-
-: <div>Vacio</div>
-    
-    }
-            </Row>
-        
-          </Container>
-        </div>
-
-    )
-}
-
-
-export default App
+export default App;

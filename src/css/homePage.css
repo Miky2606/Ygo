@@ -17,3 +17,8 @@ a, a:hover, a:focus, a:active{
 .redes a:hover{
     color:rgb(241, 215, 63)
 }
+
+#cards-style{
+    padding: 2%;
+    margin-top: 2%;  
+}

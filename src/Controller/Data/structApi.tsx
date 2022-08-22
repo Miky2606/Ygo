@@ -1,11 +1,8 @@
-import { type } from "@testing-library/user-event/dist/type";
 
 
-interface CardsApi{
-  data:data
-}
 
-interface data{
+
+export interface CardsApi{
     id:number,
     name:string,
     type:string,
@@ -34,4 +31,3 @@ interface card_images{
     image_url_small:string
 }
 
-export type {CardsApi}
