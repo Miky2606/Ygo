@@ -8,7 +8,7 @@ const PageNotFound =():JSX.Element=>{
         <div>
           
           
-
+<p>No found</p>
 
         </div>
     )

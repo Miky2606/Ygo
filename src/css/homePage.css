@@ -1,24 +1,27 @@
-
-
-
-
-
-a, a:hover, a:focus, a:active{
-    text-decoration: none;
-    color:inherit;
-    
-    
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
 
-.redes a{
-    padding: 3%;
+.redes a {
+  padding: 3%;
 }
 
-.redes a:hover{
-    color:rgb(241, 215, 63)
+.redes a:hover {
+  color: rgb(241, 215, 63);
 }
 
-#cards-style{
-    padding: 2%;
-    margin-top: 2%;  
+#cards-style {
+  padding: 2%;
+  margin-top: 2%;
+}
+
+.loading {
+  width: 100%;
+  padding: 1%;
+  display: grid;
+  justify-content: center;
 }
