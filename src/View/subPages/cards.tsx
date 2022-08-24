@@ -25,13 +25,14 @@ function CardsWeb(props: CardsApi): JSX.Element {
     setLength(length);
   };
 
+
   return (
     <div>
 
     <Card id="cards-style" style={{ width: "18rem" }}>
       <Card.Img variant="top" src={props.card_images[0].image_url} />
       <Card.Body>
-        <Card.Title style={{ fontSize: "1rem" }}>{props.name}</Card.Title>
+        <Card.Title style={{ fontSize: "1rem" }}>{props.name} {props.banlist_info ? <p>({props.banlist_info.ban_tcg})</p>: <span></span>}</Card.Title>
         <Card.Text>
           {reduceText(props.desc, length)}
 

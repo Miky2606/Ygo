@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Container, Col, Row, Spinner, Alert, Form   } from "react-bootstrap";
+import { Container, Col, Row, Alert, Form   } from "react-bootstrap";
 import CardsWeb from "./subPages/cards";
 import { CardsApi } from "../Controller/Data/structApi";
 import axios from "axios";
+import Loading from "./subPages/loading";
 
 
 const App = (): JSX.Element => {
@@ -29,7 +30,7 @@ const App = (): JSX.Element => {
       })
 
       setFilter(filter)
-      console.log(filter);
+
       
     } catch (error) {
       console.log(error);
@@ -40,6 +41,7 @@ const App = (): JSX.Element => {
   }
 
   useEffect(() => {
+
     axios
       .get("https://db.ygoprodeck.com/api/v7/cardinfo.php")
       .then((response) => {
@@ -67,13 +69,7 @@ const App = (): JSX.Element => {
       <Container>
         <Row>
           {loading ? (
-            <div className="loading">
-         
-           <Spinner animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
-              
-            </div>
+          <Loading />
             
           ) : (
             <span></span>
@@ -99,11 +95,6 @@ const App = (): JSX.Element => {
           )}
         </Row>
       </Container>
-
-
-
-
-  );
 
 
     </div>

@@ -7,13 +7,13 @@ function NavBarWeb(): JSX.Element {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/home">Cards</Nav.Link>
-            <Nav.Link href="/link">Products</Nav.Link>
-            <Nav.Link href="/l">Staples</Nav.Link>
+           
+            <Nav.Link href="/cardset">Products</Nav.Link>
+            
         
           </Nav>
         </Navbar.Collapse>
