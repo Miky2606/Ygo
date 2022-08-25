@@ -58,10 +58,10 @@ const App = (): JSX.Element => {
   return (
     <div id="content">
           
-          <Form   className="loading" style={{padding:'20px'}}>
+          <Form  className="loading" style={{padding:'20px',}}>
       <Form.Group className="mb-3" >
   
-        <Form.Control value ={cardSearch} onChange={handleChange} type="text" placeholder="Search...." />
+        <Form.Control style={{position:"sticky"}} value ={cardSearch} onChange={handleChange} type="text" placeholder="Search...." />
     
       </Form.Group>
       </Form>
